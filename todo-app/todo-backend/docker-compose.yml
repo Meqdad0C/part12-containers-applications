@@ -1,8 +1,10 @@
-version: '3.8'            # Version 3.8 is quite new and should work
+version: '3.8'                # Version 3.8 is quite new and should work
 
+name: todo-app                # The name of the project
 services:
-  todo:                   # The name of the service, can be anything
-    image: todo-backend # Declares which image to use
-    build: .              # Declares where to build if image is not found
-    ports:                # Declares the ports to publish
+  todo-app:                   # The name of the service, can be anything
+    image: todo-backend       # Declares which image to use
+    container_name: backend   # Declares the name of the container
+    build: .                  # Declares where to build if image is not found
+    ports:                    # Declares the ports to publish
       - 3000:3000

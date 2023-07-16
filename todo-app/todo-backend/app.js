@@ -16,8 +16,9 @@ app.use("/", indexRouter);
 app.use("/todos", todosRouter);
 app.get("/statistics", async (req, res) => {
   const added_todos = await redis.getAsync("added_todos");
+  const result = added_todos ?? 0;
   res.json({
-    added_todos,
+    added_todos: result,
   });
 });
 
