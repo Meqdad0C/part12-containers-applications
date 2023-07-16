@@ -2,7 +2,7 @@
 FROM node:16 AS build-stage
 WORKDIR /usr/src/app
 
-COPY . .
+COPY --chown=node:node . .
 
 RUN npm ci
 ENV REACT_APP_BACKEND_URL=http://localhost:3003
