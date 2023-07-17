@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY --chown=node:node . .
 
 RUN npm ci
-ENV REACT_APP_BACKEND_URL=http://localhost:3003
+ENV REACT_APP_BACKEND_URL=/api
 RUN npm run build
 
 # This is a new stage, everything before this is gone, except the files we want to COPY
